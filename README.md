@@ -9,11 +9,17 @@ narrator: Deutsch Female
 import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
 -->
 
-# Einführung
+# LiaScript - Interactive Markdown for Education & Documentation
 
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/LiaScript_WeAreDevelopers2022/master/README.md#1)
 
 ---------------------------------------------------------------------
 
 
-## Zielstellung
+## Motivation 
+
+
+## LiaScript Features
+
+
+## Outlook
