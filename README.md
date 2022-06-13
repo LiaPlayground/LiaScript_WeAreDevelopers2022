@@ -744,6 +744,142 @@ of $\text{CO}_2$ offsets, i.e.
 
 
 _Source:_ https://www.encon.be/en/calculation-co2-offsetting-trees
+
+### Combining scripts with Markdown
+<!--
+sin: <script format="number"
+             localeStyle="currency"
+             currency="EUR"
+             locale="de-DE"
+             modify="false"
+    > Math.sin(@input(`result`) + @input(`amp`) * @0) </script>
+-->
+
+Pos: <script run-once
+        default="0"
+        output="result"
+        input="range" value="2" min="0" max="25" step="0.1"
+        >
+@input
+</script>
+and amplitude:
+<script run-once
+        default="0"
+        output="amp"
+        input="range" value="1" min="0" max="2" step="0.1"
+        >
+@input
+</script>
+
+
+<!-- data-type="barchart" -->
+| Header 1 | <script>@input(`result`)</script> |
+|:-------- |--------: |
+| 1        | @sin(1)  |
+| 2        | @sin(2)  |
+| 3        | @sin(3)  |
+| 4        | @sin(4)  |
+| 5        | @sin(5)  |
+| 6        | @sin(6)  |
+| 7        | @sin(7)  |
+| 8        | @sin(8)  |
+| 9        | @sin(9)  |
+
+### Scripts can output HTML and LiaScript too
+
+The first value defines some kind of range:
+<script input="range" value="2" output="range">@input</script>
+, while the second can be interpreted as range
+<script input="range" value="50" output="amplitude">@input</script>.
+You can double-click on any gray element to inspect and edit its javascript code.
+
+
+<script run-once style="display: inline-block; width: 100%">
+function func(x) {
+    x /= 10;
+    return Math.sin(x) * Math.cos(x * @input(`range`) + 1) * Math.sin(x * 3 + 2) * @input(`amplitude`);
+}
+
+function generateData() {
+    let data = [];
+    for (let i = -200; i <= 200; i += 0.1) {
+        data.push([i, func(i)]);
+    }
+    return data;
+}
+
+let option = {
+    animation: false,
+    grid: {
+        top: 40,
+        left: 50,
+        right: 40,
+        bottom: 50
+    },
+    xAxis: {
+        name: 'x',
+        minorTick: {
+            show: true
+        },
+        splitLine: {
+            lineStyle: {
+                color: '#999'
+            }
+        },
+        minorSplitLine: {
+            show: true,
+            lineStyle: {
+                color: '#ddd'
+            }
+        }
+    },
+    yAxis: {
+        name: 'y',
+        min: -100,
+        max: 100,
+        minorTick: {
+            show: true
+        },
+        splitLine: {
+            lineStyle: {
+                color: '#999'
+            }
+        },
+        minorSplitLine: {
+            show: true,
+            lineStyle: {
+                color: '#ddd'
+            }
+        }
+    },
+    dataZoom: [{
+        show: true,
+        type: 'inside',
+        filterMode: 'none',
+        xAxisIndex: [0],
+        startValue: -20,
+        endValue: 20
+    }, {
+        show: true,
+        type: 'inside',
+        filterMode: 'none',
+        yAxisIndex: [0],
+        startValue: -20,
+        endValue: 20
+    }],
+    series: [
+        {
+            type: 'line',
+            showSymbol: false,
+            clip: true,
+            data: generateData()
+        }
+    ]
+}
+
+"HTML: <lia-chart option='" + JSON.stringify(option) + "'></lia-chart>"
+</script>
+
 ## How do you Share your content?
 
 __Macros:__ https://github.com/topics/liascript-template
