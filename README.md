@@ -6,7 +6,12 @@ version:  0.0.1
 language: en
 narrator: US English Female
 
-import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
+logo:     https://assets-global.website-files.com/5e9996a6531fea7d1003b18e/62247118d91be13aa5de577f_Group%201919-min.png
+
+comment:  Presentation and interactive demonstration of LiaScript at the
+          "We Are Developers 2022" conference in Berlin.
+
+import:   https://raw.githubusercontent.com/liaTemplates/plantUML/master/README.md
           https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
           https://raw.githubusercontent.com/LiaTemplates/ABCjs/0.0.2/README.md
           https://raw.githubusercontent.com/liaTemplates/TextAnalysis/main/README.md
@@ -562,6 +567,7 @@ else {
 
 ### What is Coding?
 
+
 #### Math ...
 
 ``` text
@@ -740,7 +746,15 @@ of $\text{CO}_2$ offsets, i.e.
 _Source:_ https://www.encon.be/en/calculation-co2-offsetting-trees
 ## How do you Share your content?
 
+__Macros:__ https://github.com/topics/liascript-template
 
+---
+
+__Courses:__
+
+`https://liascript.github.io/course/?YOUR-COURSE-URL`
+
+https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/LiaScript_WeAreDevelopers2022/main/README.md
 ## Questions
 
 Did you like the presentation so far?
