@@ -656,7 +656,7 @@ is
 <script>Math.sqrt(@input(`x`))</script>
 
 
-### A bit more complex
+### A bit more complex (CO2 offsetting by trees)
 
 It can be concluded that the annual CO2 offsetting rate varies from
 <script
@@ -736,6 +736,8 @@ unit="kilogram">@input(`averageTrees`) * @input(`averageCO2`)</script>
 of $\text{CO}_2$ offsets, i.e.
 <script format="number">@input(`savings`) / 1000</script> tonnes $\frac{\text{CO}_2}{\text{hectare}}$.
 
+
+_Source:_ https://www.encon.be/en/calculation-co2-offsetting-trees
 ## How do you Share your content?
 
 
@@ -768,3 +770,33 @@ Which features will you use?
     [[Tables]]    Tables to visualize data
     [[Quizzes]]   Interactive quizzes
     [[Scripting]] The JavaScript features and macros
+
+## Additional resources
+
+* __Project-Website:__ https://LiaScript.github.io
+* __Open-Source:__ https://github.com/liascript
+* __YouTube:__ https://www.youtube.com/channel/UCyiTe2GkW_u05HSdvUblGYg
+* __Additional resources:__
+
+  - Documentation: https://github.com/LiaScript/docs
+  - Free books: https://github.com/LiaBooks
+  - Templates: https://github.com/topics/liascript-template
+  - Courses & ...: https://github.com/topics/liascript-course
+  - Blog: https://aizac.herokuapp.com
+
+* __Editor:__ https://code.visualstudio.com/Download
+
+  - Liascript-Preview: https://marketplace.visualstudio.com/items?itemName=LiaScript.liascript-preview
+  - Liascript-Snippets: https://marketplace.visualstudio.com/items?itemName=LiaScript.liascript-snippets
+
+* __Development-Server:__ https://www.npmjs.com/package/@liascript/devserver
+
+* __Exporter:__ https://www.npmjs.com/package/@liascript/exporter
+
+
+---
+
+How to contact us:
+
+* via Twitter: https://twitter.com/LiaScript
+* or via chat: https://gitter.im/LiaScript/community
