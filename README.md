@@ -8,6 +8,7 @@ narrator: Deutsch Female
 
 import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
           https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
+          https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 -->
 
 # LiaScript - Interactive Markdown for Education & Documentation
@@ -36,7 +37,7 @@ TU Bergakademie Freiberg
 ## Motivation
 
                                       {{0-3}}
-> __Question:__ Who already has experience in teaching (in school or university)?
+> __Question:__ Who already has experience in teaching (in school or university) OR writes tutorials for software?
 
                                       {{1-3}}
 > __Question:__ What was your hope before spending hours sifting through material, organizing and animating?
@@ -107,7 +108,8 @@ General Misunderstanding of OER
 Types of files labeled with "OER" on TU Bergakademie's servers:
 
 <!-- data-type="BarChart"
-data-title="Ratio of different data formats of "OER" materials at TU Bergakademie Freiberg"
+data-title="Ratio of different data formats of 'OER' materials at TU Bergakademie Freiberg"
+data-show="true"
 data-xlabel="Datentyp"
 data-ylabel="% of Anzahl" -->
 | Dateityp | Anzahl |
@@ -153,15 +155,42 @@ Specific problems
 ... but what about the content?
 ===================================
 
-... no one will give you the teaching award for static web pages!
+> ... no one will give you the teaching award for static web pages!
+
+<div id="example1">
+<wokwi-led color="red"   pin="13" label="13"></wokwi-led>
+<wokwi-led color="green" pin="12" label="12"></wokwi-led>
+<wokwi-led color="blue"  pin="11" label="11"></wokwi-led>
+<wokwi-led color="blue"  pin="10" label="10"></wokwi-led>
+<span id="simulation-time"></span>
+</div>
+
+```cpp
+byte leds[] = {13, 12, 11, 10};
+
+void setup() {
+  Serial.begin(115200);
+  Serial.print("Hello WeAreDevelopers!");
+  for (byte i = 0; i < sizeof(leds); i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
+
+int i = 0;
+void loop() {
+  digitalWrite(leds[i], HIGH);
+  delay(250);
+  digitalWrite(leds[i], LOW);
+  i = (i + 1) % sizeof(leds);
+}
+```
+@AVR8js.sketch
 
 > __Challenge:__ We have to bridge the gap between usability and interactive content.
 
 ********************************************************************************
 
-
 ## LiaScript
-
 
 <!--
 style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
