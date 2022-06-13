@@ -1,12 +1,13 @@
 <!--
 
-author:   André Dietrich, Sebastian Zug 
+author:   André Dietrich, Sebastian Zug
 email:    andre.dietrich@informatik.tu-freiberg.de & sebastian.zug@informatik.tu-freiberg.de
 version:  0.0.1
 language: de
 narrator: Deutsch Female
 
 import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
+          https://raw.githubusercontent.com/liascript-templates/plantUML/master/README.md
 -->
 
 # LiaScript - Interactive Markdown for Education & Documentation
@@ -15,24 +16,74 @@ import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/
 
 ---------------------------------------------------------------------
 
+This presentation illustrates the vision of _Open Educational Ressources_ and its application on LiaScript. The document was used during a session of WeAreDevelopers in Berlin on 14th June 2022.
 
-## Motivation 
+_The sources of the presentation can be found at [Link](https://github.com/LiaPlayground/LiaScript_WeAreDevelopers2022) zu finden._
 
-> Who already has experience in teaching?
+------------------------------------------------------
 
-> How did you design the materials for your lectures and exercises?
+André Dietrich, Sebastian Zug
 
-+ no materials - just me and a chalk board
-+ Powerpoint 
-+ Latex Beamer
-+ ...
+Faculty of Mathematics and Computer Science
 
-> Why was it necessary to spend a lot of time creating new materials?
+TU Bergakademie Freiberg
 
-### Challenges in designing teaching materials
+[sebastian.zug@informatik.tu-freiberg.de](mailto:sebastian.zug@informatik.tu-freiberg.de)
+
+------------------------------------------------------
 
 
-### OER as a game changer?
+## Motivation
+
+                                      {{0-3}}
+> __Question:__ Who already has experience in teaching (in school or university)?
+
+                                      {{1-3}}
+> __Question:__ What was your hope before spending hours sifting through material, organizing and animating?
+
+                                      {{2-3}}
+********************************************************************************
+
+Developing learning content with other contributors
+
+<!--
+style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
+-->
+```ascii
+
+Version 1.0                            Version 1.1
++---------------------------+          +---------------------------+
+| Course  German Literatur  |          | Course  German Literature |
+| Authors John Muster       | "Error"  | Authors John Muster       |
+|                           |------->  |         Angelika Maier    |------> ....
+|~~~~~~~~~~~~~~~~~~~~~~~~~~~|          |~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+| In 1756 Goethe visited    |---.      | In 1786 Goethe visited    |--.
+| Italy ...                 |   |      | Italy ...                 |  |
+                                |                                     |    Version 1.1
+                                |                                     |    +----------------------------+
+                                |                                     |    | Course  німецька література|
+                                |                                     |    | Authors John Muster        |
+                                |                                     .--> |         Angelika Maier     |
+                                |                                          |         Стів Грей          |
+                                |                                          |~~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+                                |                                          | У 1786 році Гете здійснив  |
+                                |                                          | подорож до Італії ...      |
+                                |       Version 1.0
+                                |      +---------------------------+
+                                |      | Course  Goethe & Schiller |
+                                |      | Authors John Muster       |
+                                .-->   |         Angelika Maier    |--+-->
+                                       |~~~~~~~~~~~~~~~~~~~~~~~~~~~|  |
+                                       | The correspondence during |  |
+                                       | the Italian journey ...   |  |
+                                                                      :
+```
+*Versions of the freely available teaching content of a course and its reuse in other courses*.
+
+
+********************************************************************************
+
+### Open Educational Resources
 
 >  **Open Courseware / Open Educational Resources** ... teaching, learning and
 > research materials in any medium, digital or otherwise,that reside in the
@@ -44,20 +95,122 @@ import:   https://raw.githubusercontent.com/liascript-templates/plantUML/master/
 >
 > -- UNESCO 2002 Forum on the Impact of Open Courseware for Higher Education in Developing Countries [(Link)](https://unesdoc.unesco.org/ark:/48223/pf0000128515)
 
-| requirement       | meaning                          |
-| ----------------- | -------------------------------- |
-| `storing/copying` | downloading, storing and copying |
-| `use`             | use in learning context          |
-| `process`         | transformation                   |
-| `adapting/mixing` | extraction and combination       |
-| `disseminate`     | (digital) publication            |
 
-> Suprise: Most of the identified Problems are already solved in software development processes!
+### Challenges and opportunities of OER
 
-### Big gap - Developing code vs. developing learning materials
+                                    {{0-1}}
+********************************************************************************
+
+General Misunderstanding of OER
+===================================
+
+Types of files labeled with "OER" on TU Bergakademie's servers:
+
+<!-- data-type="BarChart"
+data-title="Ratio of different data formats of "OER" materials at TU Bergakademie Freiberg"
+data-xlabel="Datentyp"
+data-ylabel="% of Anzahl" -->
+| Dateityp | Anzahl |
+| -------- | ------ |
+| `pdf`    | 5242   |
+| `jpg`    | 1040   |
+| `mkv`    | 873    |
+| `mp4`    | 586    |
+| `png`    | 494    |
+| `zip`    | 443    |
+| `html`   | 387    |
+| `docx`   | 376    |
+| `pptx`   | 245    |
+| `xlsx`   | 191    |
+
+********************************************************************************
+
+                                   {{1-2}}
+********************************************************************************
+
+Specific problems
+===================================
+
+| requirement                          | meaning                                             | Challenges                                           |
+| ------------------------------------ | --------------------------------------------------- | ---------------------------------------------------- |
+| `storing/copying`                    | downloading, storing and copying                    | closed learning management systems                   |
+| `use`                                | use in learning context                             | different learning platforms                         |
+| `process`                            | transformation                                      | missing standards                                    |
+| `adapting/mixing`                    | extraction and combination                          | commercial software products, limited digital skills |
+| `disseminate` / `version management` | (digital) publication of                            |     limited digital skills                                                 |
+| `identify`                           | <!-- Style="color:red" -->  find relevant materials | bunches of OER data bases                                                      |
 
 
-## LiaScript Features
+*_(Extended) definition of OER according to 5V Modell described by Jöran Muuß-Merholz und Jörg Lohrer für [open-educational-ressources](https://open-educational-resources.de)_*
+
+> __Surprise:__ A simple text document containing Markdown content and some training would solve the problems.
+
+********************************************************************************
+
+                                   {{2-3}}
+********************************************************************************
+
+... but what about the content?
+===================================
+
+... no one will give you the teaching award for static web pages!
+
+> __Challenge:__ We have to bridge the gap between usability and interactive content.
+
+********************************************************************************
 
 
-## Outlook
+## LiaScript
+
+
+<!--
+style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
+-->
+```ascii
+LiaScript = free
+            interactive learning materials,
+            organized by a version control system,
+            represented in a human readable manner,
+            executed in a server-less infrastructure.                           .
+```
+*Vision of LiaScript.*
+
+
+<!--
+style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
+-->
+```ascii
+   +---------------------+
+   | # Digital Systems V1|\
+ +--------------------+  +-+
+ | # Digital Systems  |\
++------------------+  +-+
+| # Digital Systems|\                                      .-----------.
+| (SoSe 2021)      +-+                              ╔══════|   LMS  X  |══════╗
+|                    |  --------------------------> ║      '-----------'      ║
+| ## Task 1          |                              ║ Digital Systems 2021    ║
+|                    |                              ║                         ║
+| + Implement ...    | --------------+              ║ import numpy as np      ║
+|                    |    Trans-     |              ║ ...                     ║
+|                    |    formation  |              ╚═════════════════════════╝
++--------------------+               v
+                                .-,(   ),-.                .-----------.
+License: ...                 .-(           )-.      ╔══════|   LMS  Y  |══════╗
+Content: ...                (    OER Cloud    )     ║      '-----------'      ║
+Author: ...                  '-(           )-'  +-->║ Digital Systems 2021    ║
+Versions: ...                   '-.(   ).-'     |   ║                         ║
+                                     |          |
+                                     +----------+          .-----------.
+                                                |   ╔══════|  Webapp   |══════╗
+                                                |   ║      '-----------'      ║
+                                                +-->║ Digital Systems 2021    ║
+                                                    ║                         ║
+
+```
+*Transformation of OER materials for use in various LMSs.*
+
+
+### Features
+
+
+###  Outlook
