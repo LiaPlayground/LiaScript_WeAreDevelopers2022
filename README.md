@@ -2,7 +2,7 @@
 
 author:   André Dietrich, Sebastian Zug
 email:    andre.dietrich@informatik.tu-freiberg.de & sebastian.zug@informatik.tu-freiberg.de
-version:  0.0.1
+version:  0.0.2
 language: en
 narrator: US English Female
 
@@ -112,10 +112,8 @@ Version 1.0                            Version 1.1
 General Misunderstanding of OER
 ===================================
 
-Types of files labeled with "OER" on TU Bergakademie's servers:
-
 <!-- data-type="BarChart"
-data-title="Ratio of different data formats of 'OER' materials at TU Bergakademie Freiberg"
+data-title="Histogram of different data formats"
 data-show="true"
 data-xlabel="Datentyp"
 data-ylabel="% of Anzahl" -->
@@ -132,6 +130,8 @@ data-ylabel="% of Anzahl" -->
 | `pptx`   | 245    |
 | `xlsx`   | 191    |
 
+_Types of files labeled with "OER" on TU Bergakademie's servers_
+
 ********************************************************************************
 
                                    {{1-2}}
@@ -140,17 +140,17 @@ data-ylabel="% of Anzahl" -->
 Specific problems
 ===================================
 
-| requirement                          | meaning                                             | Challenges                                           |
+| Requirement                          | Meaning                                             | Challenges                                           |
 | ------------------------------------ | --------------------------------------------------- | ---------------------------------------------------- |
 | `storing/copying`                    | downloading, storing and copying                    | closed learning management systems                   |
 | `use`                                | use in learning context                             | different learning platforms                         |
 | `process`                            | transformation                                      | missing standards                                    |
 | `adapting/mixing`                    | extraction and combination                          | commercial software products, limited digital skills |
-| `disseminate` / `version management` | (digital) publication of                            |     limited digital skills                                                 |
-| `identify`                           | <!-- Style="color:red" -->  find relevant materials | bunches of OER data bases                                                      |
+| `disseminate` / `version management` | (digital) publication <!-- Style="color:red" --> and version handling                             | limited digital skills                               |
+| `identify`                           | <!-- Style="color:red" -->  find relevant materials | bunches of OER data bases                            |
 
 
-*_(Extended) definition of OER according to 5V Modell described by Jöran Muuß-Merholz und Jörg Lohrer für [open-educational-ressources](https://open-educational-resources.de)_*
+*_Extended definition of OER according to 5V Modell described by Jöran Muuß-Merholz und Jörg Lohrer für [open-educational-ressources](https://open-educational-resources.de)_*
 
 > __Surprise:__ A simple text document containing Markdown content and some training would solve the problems.
 
@@ -197,13 +197,13 @@ void loop() {
 
 ********************************************************************************
 
-## LiaScript
+## LiaScript-Vision
 
 <!--
 style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
 -->
 ```ascii
-LiaScript = free
+LiaScript = free, open source,
             interactive learning materials,
             organized by a version control system,
             represented in a human readable manner,
@@ -216,23 +216,31 @@ LiaScript = free
 style="width: 100%; max-width: 860px; display: block; margin-left: auto; margin-right: auto;"
 -->
 ```ascii
+
+
+  Teacher's perspective                             Student's perspective
+  ------------------------------------------------------------------------------
+
+   GitHub, GitLab, ...
+   NextCloud, Dropbox, ...
+
    +---------------------+
    | # Digital Systems V1|\
  +--------------------+  +-+
- | # Digital Systems  |\
+ | # Digital Systems  |\   |
 +------------------+  +-+
-| # Digital Systems|\                                      .-----------.
-| (SoSe 2021)      +-+                              ╔══════|   LMS  X  |══════╗
+| # Digital Systems|\   |                                  .-----------.
+| (Summer 2021)    +-+                              ╔══════|  Website  |══════╗
 |                    |  --------------------------> ║      '-----------'      ║
 | ## Task 1          |                              ║ Digital Systems 2021    ║
 |                    |                              ║                         ║
-| + Implement ...    | --------------+              ║ import numpy as np      ║
+| + Implement ...    | --------------+              ║ TASK 1                  ║
 |                    |    Trans-     |              ║ ...                     ║
 |                    |    formation  |              ╚═════════════════════════╝
 +--------------------+               v
                                 .-,(   ),-.                .-----------.
 License: ...                 .-(           )-.      ╔══════|   LMS  Y  |══════╗
-Content: ...                (    OER Cloud    )     ║      '-----------'      ║
+Content: ...                (   Lia Exporter  )     ║      '-----------'      ║
 Author: ...                  '-(           )-'  +-->║ Digital Systems 2021    ║
 Versions: ...                   '-.(   ).-'     |   ║                         ║
                                      |          |
@@ -244,12 +252,6 @@ Versions: ...                   '-.(   ).-'     |   ║                         
 
 ```
 *Transformation of OER materials for use in various LMSs.*
-
-
-### Features
-
-
-###  Outlook
 
 # Tutorial
 
@@ -689,7 +691,7 @@ To compensate 1 tonne of CO2,
 <script>
 Math.round(1000 / @input(`maxCO2`))
 </script>
-to 
+to
 <script>
 Math.round(1000 / @input(`minCO2`))
 </script>
@@ -711,7 +713,7 @@ format="number" >
 @input
 </script>
 trees per hectare.
-For calculating the figures on the Encon website, we assume a rate of 
+For calculating the figures on the Encon website, we assume a rate of
 <script
 output="averageCO2"
 format="number"
